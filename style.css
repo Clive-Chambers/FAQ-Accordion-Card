@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    --white: hsl(0, 0%, 100%);
+    --body-font: 'Kumbh Sans', sans-serif;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue));
+    background-size: cover;
+    min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: 12px;
+  }
+
+  main.container {
+    margin: 7.5% auto 0 auto;
+    max-width: 915px;
+    background-color: var(--white);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    height: 32rem;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 1130% 68%;
+  }
+
+  .img-overflow {
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  picture {
+    position: relative;
+    top: 4.3rem;
+    right: 5.3rem;
+    
+  }
+
+  .box-img {
+    position: relative;
+    bottom: 21.6rem;
+    right: 5.8rem;
+  }
+
+  .accordion{
+    margin-left: .15rem;
+    margin-top: 2.3rem;
+    font-size: var(--body-font);
+  }
+
+  .accordion-question {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    padding: 0.75rem 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: .5rem;
+    letter-spacing: .04rem;
+    color: var(--dark-grayish-blue);
+    background: none;
+    font-weight: 400;
+  }
+
+  .accordion-question:hover, .accordion-question.active:hover {
+    color: var(--soft-red);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .accordion-question.active {
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+  }
+
+  .accordion-question.active img {
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .accordion-body {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    width: 75%;
+    color: var(--dark-grayish-blue);
+    border-bottom: 1px solid var(--light-grayish-blue);
+  }
+
+  .accordion-body.active {
+    max-height: 10rem!important;
+    padding: 0 1rem 1.5rem 0!important;
+
+  }
+
+  .accordion h2 {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    color: var(--very-dark-grayish-blue);
+  }
+
+  .accordion-top {
+    margin-top: 2rem;
+  }
+
+  .attribution { 
+    font-size: 11px; 
+    text-align: center;
+    margin-top: 3rem;  
+  }
+   
+  .attribution a {
+
+    color: var(--soft-red); 
+  }
+
+  .attribution a:hover { 
+    color: var(--white); 
+  }
+
+
+  @media screen and (max-width: 1010px) {
+
+    body {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  
+    main.container {
+      grid-template-columns: 1fr;
+      width: 70%;
+      margin-top: 20rem;
+      min-height: 40rem;
+      background-image: url(./images/bg-pattern-mobile.svg);
+      background-repeat: no-repeat;
+      background-position: 51% 23%;
+    }
+
+    .img-overflow {
+      position: relative;
+      overflow: visible;
+      left: 5rem;
+      top: -65%;
+    }
+
+    picture img {
+      max-width: 70rem;
+      z-index: 10;
+    }
+
+    .mobile-img {
+      text-align: center;
+    }
+   
+    .box-img {
+      display: none;
+    }
+    
+    .accordion {
+      z-index: 1;
+      margin-top: -55%;
+      margin-left: 22%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    main.container {
+
+      background-position: 46% 12%;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .accordion {
+      z-index: 1;
+      margin-top: -55%;
+      margin-left: 14%;
+    }
+    
+    .accordion-question {
+
+      width: 85%;
+      padding: 0.75rem 0;
+
+    }
+  
+  }
+
+  @media screen and (max-width: 530px) {
+    main.container {
+      background-position: 46% 1%;
+    }
+    
+    .accordion {
+      margin-top: -55%;
+      margin-left: 2%;
+    }
+    
+    .accordion-question {
+
+      width: 95%;
+    }
+  
+  }
